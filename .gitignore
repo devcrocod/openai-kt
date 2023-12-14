@@ -1,0 +1,38 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# Package Files
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs
+hs_err_pid*
+
+# Kotlin
+*.kjsm
+*.iml
+
+# Gradle
+.gradle/
+build/
+out/
+.gradletasknamecache
+
+# Ignore IDE related files
+.idea/
+*.iml
+*.iws
+/target/
+
+# The .fleet directory
+.fleet/
+
+# Mac files
+.DS_Store
+
+# local
+local.properties
