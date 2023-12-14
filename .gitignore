@@ -12,10 +12,6 @@
 # virtual machine crash logs
 hs_err_pid*
 
-# Kotlin
-*.kjsm
-*.iml
-
 # Gradle
 .gradle/
 build/
