@@ -32,3 +32,6 @@ out/
 
 # local
 local.properties
+
+# Kotlin
+.kotlin/

@@ -5,9 +5,12 @@ import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
 plugins {
     id("com.android.library")
     kotlin("multiplatform")
+    kotlin("plugin.serialization")
 }
 
 kotlin {
+    jvmToolchain(17)
+
     jvm()
     androidTarget()
     macosX64()
@@ -24,7 +27,12 @@ kotlin {
     // Access source sets configured in the module.yaml:
     sourceSets {
         val commonMain by getting {
-//             Configure the source set here
+            dependencies {
+                api(libs.kotlinx.io)
+                api(libs.serialization.json)
+                implementation(libs.serialization.core)
+
+            }
         }
     }
 }
