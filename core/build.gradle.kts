@@ -9,6 +9,12 @@ plugins {
 }
 
 kotlin {
+    explicitApi()
+
+    compilerOptions {
+        freeCompilerArgs.add("-Xcontext-receivers")
+    }
+
     jvmToolchain(17)
 
     jvm()

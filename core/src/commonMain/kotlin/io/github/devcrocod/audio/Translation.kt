@@ -49,7 +49,7 @@ public class TranslationRequestBuilder() {
     public val ResponseFormat.vtt: ResponseFormat
         get() = ResponseFormat("vtt")
 
-    fun required(model: ModelId, input: String, voice: Voice): SpeechRequestBuilder =
+    public fun required(model: ModelId, input: String, voice: Voice): SpeechRequestBuilder =
         SpeechRequestBuilder().apply {
             this.model = model
             this.input = input

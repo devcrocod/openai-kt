@@ -31,43 +31,7 @@ public class SpeechRequestBuilder internal constructor() {
     public var response: AudioFormat? = null
     public var speed: Double? = null
 
-    public val ModelId.Companion.tts1: ModelId // todo(add targets implementation for wasm?)
-        get() = ModelId("tts-1")
-
-    public val ModelId.Companion.tts1hd: ModelId // todo(add targets implementation for wasm?)
-        get() = ModelId("tts-1-hd")
-
-    public val Voice.Companion.alloy: Voice
-        get() = Voice("alloy")
-
-    public val Voice.Companion.echo: Voice
-        get() = Voice("echo")
-
-    public val Voice.Companion.fable: Voice
-        get() = Voice("fable")
-
-    public val Voice.Companion.onyx: Voice
-        get() = Voice("onyx")
-
-    public val Voice.Companion.nova: Voice
-        get() = Voice("nova")
-
-    public val Voice.Companion.shimmer: Voice
-        get() = Voice("shimmer")
-
-    public val AudioFormat.Companion.mp3: AudioFormat
-        get() = AudioFormat("mp3")
-
-    public val AudioFormat.Companion.opus: AudioFormat
-        get() = AudioFormat("opus")
-
-    public val AudioFormat.Companion.aac: AudioFormat
-        get() = AudioFormat("aac")
-
-    public val AudioFormat.Companion.flac: AudioFormat
-        get() = AudioFormat("flac")
-
-    fun required(model: ModelId, input: String, voice: Voice): SpeechRequestBuilder =
+    public fun required(model: ModelId, input: String, voice: Voice): SpeechRequestBuilder =
         SpeechRequestBuilder().apply {
             this.model = model
             this.input = input
@@ -76,7 +40,7 @@ public class SpeechRequestBuilder internal constructor() {
 
     private fun validate(modelId: ModelId?): ModelId {
         requireNotNull(modelId) { "Model is required" }
-        require(modelId == ModelId.tts1 || modelId == ModelId.tts1hd) {
+        require(modelId == ModelId.`tts-1` || modelId == ModelId.`tts-1-hd`) {
             "Model should be one of the available TTS models: `tts-1` or `tts-1-hd`"
         }
         return modelId
@@ -100,5 +64,3 @@ public class SpeechRequestBuilder internal constructor() {
 
 public fun speechRequest(block: SpeechRequestBuilder.() -> Unit): SpeechRequest =
     SpeechRequestBuilder().apply(block).build()
-
-

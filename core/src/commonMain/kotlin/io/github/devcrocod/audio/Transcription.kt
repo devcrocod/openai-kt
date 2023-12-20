@@ -46,18 +46,7 @@ public class TranscriptionRequestBuilder() {
 
     public var temperature: Double? = null
 
-    public val ResponseFormat.json: ResponseFormat
-        get() = ResponseFormat("json")
-    public val ResponseFormat.text: ResponseFormat
-        get() = ResponseFormat("text")
-    public val ResponseFormat.verboseJson: ResponseFormat
-        get() = ResponseFormat("verbose_json")
-    public val ResponseFormat.srt: ResponseFormat
-        get() = ResponseFormat("srt")
-    public val ResponseFormat.vtt: ResponseFormat
-        get() = ResponseFormat("vtt")
-
-    fun required(model: ModelId, input: String, voice: Voice): SpeechRequestBuilder =
+    public fun required(model: ModelId, input: String, voice: Voice): SpeechRequestBuilder =
         SpeechRequestBuilder().apply {
             this.model = model
             this.input = input
