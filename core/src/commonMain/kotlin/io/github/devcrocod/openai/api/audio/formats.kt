@@ -1,4 +1,4 @@
-package io.github.devcrocod.audio
+package io.github.devcrocod.openai.api.audio
 
 import kotlinx.serialization.Serializable
 import kotlin.jvm.JvmInline

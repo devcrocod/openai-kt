@@ -1,6 +1,6 @@
-package io.github.devcrocod.model
+package io.github.devcrocod.openai.model
 
-import io.github.devcrocod.audio.SpeechRequestBuilder
+import io.github.devcrocod.openai.api.audio.SpeechRequestBuilder
 import kotlinx.serialization.Serializable
 import kotlin.jvm.JvmInline
 

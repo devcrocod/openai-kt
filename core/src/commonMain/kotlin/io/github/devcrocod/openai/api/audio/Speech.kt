@@ -1,6 +1,6 @@
-package io.github.devcrocod.audio
+package io.github.devcrocod.openai.api.audio
 
-import io.github.devcrocod.model.ModelId
+import io.github.devcrocod.openai.model.ModelId
 import kotlinx.serialization.Serializable
 
 /**
