@@ -10,6 +10,7 @@ plugins {
 
 kotlin {
     explicitApi()
+    targetHierarchy.default()
 
     compilerOptions {
         freeCompilerArgs.add("-Xcontext-receivers")
@@ -19,13 +20,17 @@ kotlin {
 
     jvm()
     androidTarget()
+
+    // macos
     macosX64()
     macosArm64()
-    linuxX64()
-    linuxArm64()
+
+    // ios
     iosX64()
     iosArm64()
     iosSimulatorArm64()
+
+    // wasm
     wasmJs {
         d8()
     }
@@ -37,7 +42,34 @@ kotlin {
                 api(libs.kotlinx.io)
                 api(libs.serialization.json)
                 implementation(libs.serialization.core)
+                implementation(libs.ktor.client.core)
+                implementation(libs.ktor.client.logging)
+                implementation(libs.ktor.client.auth)
+                implementation(libs.ktor.client.content.negotiation)
+                implementation(libs.ktor.client.serialization.json)
+                implementation(libs.kotlinx.datetime)
+            }
+        }
+        val commonTest by getting {
+            dependencies {
+                implementation(kotlin("test"))
+            }
+        }
+        val jvmMain by getting {
+            dependencies {
+                implementation(libs.ktor.client.okhttp)
+            }
+        }
 
+        val appleMain by getting {
+            dependencies {
+                implementation(libs.ktor.client.darwin)
+            }
+        }
+
+        val wasmJsMain by getting {
+            dependencies {
+                implementation(libs.ktor.client.js)
             }
         }
     }

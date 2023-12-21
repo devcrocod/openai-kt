@@ -3,8 +3,9 @@ kotlin = "2.0.0-Beta2"
 coroutines = "1.8.0-RC"
 serialization = "1.6.2"
 android = "8.2.0"
-ktor = "2.3.7"
+ktor = "3.0.0-wasm2"
 kotlinx-io = "0.3.0"
+datetime = "0.5.0"
 logging = "5.1.1"
 dokka = "1.9.10"
 
@@ -24,16 +25,16 @@ ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-conte
 ktor-client-serialization-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 # Ktor engines
 ktor-client-apache = { group = "io.ktor", name = "ktor-client-apache", version.ref = "ktor" }
-ktor-client-cio = { group = "io.ktor", name = "ktor-client-cio", version.ref = "ktor" }
-ktor-client-java = { group = "io.ktor", name = "ktor-client-java", version.ref = "ktor" }
-ktor-client-jetty = { group = "io.ktor", name = "ktor-client-jetty", version.ref = "ktor" }
 ktor-client-mock = { group = "io.ktor", name = "ktor-client-mock", version.ref = "ktor" }
 ktor-client-okhttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor" }
 ktor-client-darwin = { group = "io.ktor", name = "ktor-client-darwin", version.ref = "ktor" }
+ktor-client-js = { group = "io.ktor", name = "ktor-client-js", version.ref = "ktor" }
 # kotlinx-io
 kotlinx-io = { group = "org.jetbrains.kotlinx", name = "kotlinx-io-core", version.ref = "kotlinx-io" }
 # Logback
 kotlin-logging = { group = "io.github.oshai", name = "kotlin-logging", version.ref = "logging" }
+# Datetime
+kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "datetime" }
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
