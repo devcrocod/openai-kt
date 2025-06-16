@@ -35,3 +35,4 @@ local.properties
 
 # Kotlin
 .kotlin/
+kotlin-js-store/yarn.lock
